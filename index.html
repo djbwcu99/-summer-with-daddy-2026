@@ -286,7 +286,7 @@ function buildMonth(containerId, year, monthIndex, daysInMonth, events) {
         const pill = document.createElement("div");
         pill.className = "event-pill";
 
-const color = event.color || "yellow";
+const color = (event.color || event.Color || "yellow").toLowerCase();
 
 const colors = {
   blue: "#bde0fe",

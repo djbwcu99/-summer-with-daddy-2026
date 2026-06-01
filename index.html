@@ -72,11 +72,11 @@ button:hover { background: #e04e52; }
 </header>
 <div class="container">
   <div class="legend">
-    <div class="legend-item"><div class="legend-dot" style="background:#ffadad"></div> Me &amp; Wife</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#bde0fe"></div> Me with Kids</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#ffadad"></div> Daddy &amp; Mommy</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#bde0fe"></div> Daddy with Kids</div>
     <div class="legend-item"><div class="legend-dot" style="background:#caffbf"></div> Family</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#fff1b8"></div> Son</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#d0bdf4"></div> Daughter</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fff1b8"></div> Ben</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#d0bdf4"></div> Hannah</div>
     <div class="legend-item"><div class="legend-dot" style="background:#d9d9d9"></div> Holiday/Birthday</div>
   </div>
   <div class="form-box no-print">
@@ -89,20 +89,20 @@ button:hover { background: #e04e52; }
     <input id="emoji" type="text" placeholder="Emoji (optional)" maxlength="2" />
     <label style="margin-top:10px;display:block;font-size:13px;">Color</label>
     <div class="color-select" id="colorPicker">
-      <div class="color-opt selected" data-color="blue" style="background:#bde0fe" title="Me with Kids"></div>
-      <div class="color-opt" data-color="red" style="background:#ffadad" title="Me &amp; Wife"></div>
+      <div class="color-opt selected" data-color="blue" style="background:#bde0fe" title="Daddy with Kids"></div>
+      <div class="color-opt" data-color="red" style="background:#ffadad" title="Daddy &amp; Mommy"></div>
       <div class="color-opt" data-color="green" style="background:#caffbf" title="Family"></div>
-      <div class="color-opt" data-color="yellow" style="background:#fff1b8" title="Son"></div>
-      <div class="color-opt" data-color="purple" style="background:#d0bdf4" title="Daughter"></div>
+      <div class="color-opt" data-color="yellow" style="background:#fff1b8" title="Ben"></div>
+      <div class="color-opt" data-color="purple" style="background:#d0bdf4" title="Hannah"></div>
       <div class="color-opt" data-color="grey" style="background:#d9d9d9" title="Holiday/Birthday"></div>
     </div>
     <button onclick="addEvent()" style="margin-top:14px;">Add Event</button>
   </div>
-  <h2 class="month-title">June 2026</h2>
+  <h2 class="month-title">&#127774; June 2026</h2>
   <div id="june" class="calendar-grid"></div>
-  <h2 class="month-title">July 2026</h2>
+  <h2 class="month-title">&#127482;&#127480; July 2026</h2>
   <div id="july" class="calendar-grid"></div>
-  <h2 class="month-title">August 2026</h2>
+  <h2 class="month-title">&#127796; August 2026</h2>
   <div id="august" class="calendar-grid"></div>
 </div>
 <div class="modal-overlay" id="editModal">
@@ -115,11 +115,11 @@ button:hover { background: #e04e52; }
     <label>Emoji</label><input id="editEmoji" type="text" maxlength="2" />
     <label style="margin-top:10px;display:block;font-size:13px;">Color</label>
     <div class="color-select" id="editColorPicker">
-      <div class="color-opt" data-color="blue" style="background:#bde0fe" title="Me with Kids"></div>
-      <div class="color-opt" data-color="red" style="background:#ffadad" title="Me &amp; Wife"></div>
+      <div class="color-opt" data-color="blue" style="background:#bde0fe" title="Daddy with Kids"></div>
+      <div class="color-opt" data-color="red" style="background:#ffadad" title="Daddy &amp; Mommy"></div>
       <div class="color-opt" data-color="green" style="background:#caffbf" title="Family"></div>
-      <div class="color-opt" data-color="yellow" style="background:#fff1b8" title="Son"></div>
-      <div class="color-opt" data-color="purple" style="background:#d0bdf4" title="Daughter"></div>
+      <div class="color-opt" data-color="yellow" style="background:#fff1b8" title="Ben"></div>
+      <div class="color-opt" data-color="purple" style="background:#d0bdf4" title="Hannah"></div>
       <div class="color-opt" data-color="grey" style="background:#d9d9d9" title="Holiday/Birthday"></div>
     </div>
     <div class="modal-actions">
@@ -129,125 +129,117 @@ button:hover { background: #e04e52; }
   </div>
 </div>
 <script>
-const SUPABASE_URL = "https://ahdcdasfqhqsimxmfpkj.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoZGNkYXNmcWhxc2lteG1mcGtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMDUyNjIsImV4cCI6MjA5NTg4MTI2Mn0.dvA3I_Nb1JxGXFYGDWQAzwXTmsfqNvBVVxjG_UOqFsg";
-const sbHeaders = {"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":"application/json","Prefer":"return=representation"};
-const COLORS = {blue:"#bde0fe",green:"#caffbf",red:"#ffadad",yellow:"#fff1b8",purple:"#d0bdf4",grey:"#d9d9d9"};
-const WEEKDAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var SUPA = "https://ahdcdasfqhqsimxmfpkj.supabase.co";
+var KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoZGNkYXNmcWhxc2lteG1mcGtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMDUyNjIsImV4cCI6MjA5NTg4MTI2Mn0.dvA3I_Nb1JxGXFYGDWQAzwXTmsfqNvBVVxjG_UOqFsg";
+var HDR = {"apikey":KEY,"Authorization":"Bearer "+KEY,"Content-Type":"application/json","Prefer":"return=representation"};
+var COLORS = {blue:"#bde0fe",green:"#caffbf",red:"#ffadad",yellow:"#fff1b8",purple:"#d0bdf4",grey:"#d9d9d9"};
+var DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
-document.querySelectorAll("#colorPicker .color-opt").forEach(function(el){
-  el.addEventListener("click",function(){
-    document.querySelectorAll("#colorPicker .color-opt").forEach(function(e){e.classList.remove("selected");});
-    el.classList.add("selected");
+function pickColor(pid) {
+  document.querySelectorAll("#"+pid+" .color-opt").forEach(function(el) {
+    el.addEventListener("click", function() {
+      document.querySelectorAll("#"+pid+" .color-opt").forEach(function(e){e.classList.remove("selected");});
+      el.classList.add("selected");
+    });
   });
-});
-document.querySelectorAll("#editColorPicker .color-opt").forEach(function(el){
-  el.addEventListener("click",function(){
-    document.querySelectorAll("#editColorPicker .color-opt").forEach(function(e){e.classList.remove("selected");});
-    el.classList.add("selected");
-  });
-});
+}
+pickColor("colorPicker");
+pickColor("editColorPicker");
 
-function getColor(pickerId){
-  var s=document.querySelector("#"+pickerId+" .color-opt.selected");
+function getColor(pid) {
+  var s = document.querySelector("#"+pid+" .color-opt.selected");
   return s ? s.dataset.color : "blue";
 }
-function setColor(pickerId,color){
-  document.querySelectorAll("#"+pickerId+" .color-opt").forEach(function(e){
-    e.classList.toggle("selected", e.dataset.color===color);
+function setColor(pid, c) {
+  document.querySelectorAll("#"+pid+" .color-opt").forEach(function(e){
+    e.classList.toggle("selected", e.dataset.color === c);
   });
 }
 
-async function loadCalendar(){
-  var res=await fetch(SUPABASE_URL+"/rest/v1/events?select=*&order=startDate.asc",{headers:sbHeaders});
-  var events=await res.json();
-  if(!Array.isArray(events)){console.error("Bad response",events);return;}
-  buildMonth("june",2026,5,30,events);
-  buildMonth("july",2026,6,31,events);
-  buildMonth("august",2026,7,31,events);
+function pad(n){ return String(n).padStart(2,"0"); }
+
+async function loadCalendar() {
+  var res = await fetch(SUPA+"/rest/v1/events?select=*&order=startDate.asc", {headers:HDR});
+  var ev = await res.json();
+  if (!Array.isArray(ev)) { console.error("Supabase error", ev); return; }
+  buildMonth("june",  2026, 5, 30, ev);
+  buildMonth("july",  2026, 6, 31, ev);
+  buildMonth("august",2026, 7, 31, ev);
 }
 
-function buildMonth(cId,year,mi,dim,events){
-  var c=document.getElementById(cId);
-  c.innerHTML="";
-  WEEKDAYS.forEach(function(d){var h=document.createElement("div");h.className="weekday";h.innerText=d;c.appendChild(h);});
-  var fd=new Date(year,mi,1).getDay();
-  for(var i=0;i<fd;i++) c.appendChild(document.createElement("div"));
-  for(var day=1;day<=dim;day++){
-    var cell=document.createElement("div");cell.className="day-cell";
-    var num=document.createElement("div");num.className="day-number";num.innerText=day;cell.appendChild(num);
-    var ds=year+"-"+String(mi+1).padStart(2,"0")+"-"+String(day).padStart(2,"0");
-    events.forEach(function(ev){
-      var s=ev.startDate, e=ev.endDate||s;
-      if(ds>=s && ds<=e){
-        var pill=document.createElement("div");
-        pill.className="event-pill";
-        pill.dataset.id=ev.id;
-        var col=(ev.color||"blue").toLowerCase();
-        pill.style.background=COLORS[col]||"#bde0fe";
-        var txt=document.createElement("span");txt.className="pill-text";txt.textContent=(ev.emoji||"")+" "+(ev.event||"");
-        var acts=document.createElement("span");acts.className="pill-actions";
-        var editBtn=document.createElement("button");editBtn.className="pill-btn";editBtn.title="Edit";editBtn.textContent="Edit";
-        editBtn.addEventListener("click",function(){openEdit(pill.dataset.id);});
-        var delBtn=document.createElement("button");delBtn.className="pill-btn";delBtn.title="Delete";delBtn.textContent="Del";
-        delBtn.addEventListener("click",function(){deleteEvent(pill.dataset.id);});
-        acts.appendChild(editBtn);acts.appendChild(delBtn);
-        pill.appendChild(txt);pill.appendChild(acts);
-        cell.appendChild(pill);
+function buildMonth(cId, year, mi, dim, events) {
+  var c = document.getElementById(cId);
+  c.innerHTML = "";
+  DAYS.forEach(function(d){ var h=document.createElement("div"); h.className="weekday"; h.textContent=d; c.appendChild(h); });
+  var fd = new Date(year, mi, 1).getDay();
+  for (var i=0; i<fd; i++) c.appendChild(document.createElement("div"));
+  for (var day=1; day<=dim; day++) {
+    var cell = document.createElement("div"); cell.className = "day-cell";
+    var num  = document.createElement("div"); num.className  = "day-number"; num.textContent = day; cell.appendChild(num);
+    var ds = year+"-"+pad(mi+1)+"-"+pad(day);
+    events.forEach(function(ev) {
+      var s = ev.startDate, e = ev.endDate || s;
+      if (ds >= s && ds <= e) {
+        var pill = document.createElement("div"); pill.className = "event-pill"; pill.dataset.id = ev.id;
+        var col = (ev.color||"blue").toLowerCase(); pill.style.background = COLORS[col]||"#bde0fe";
+        var txt = document.createElement("span"); txt.className = "pill-text"; txt.textContent = (ev.emoji||"")+" "+(ev.event||"");
+        var acts = document.createElement("span"); acts.className = "pill-actions";
+        var eb = document.createElement("button"); eb.className="pill-btn"; eb.textContent="Edit"; eb.title="Edit";
+        eb.addEventListener("click", function(){ openEdit(pill.dataset.id); });
+        var db = document.createElement("button"); db.className="pill-btn"; db.textContent="Del"; db.title="Delete";
+        db.addEventListener("click", function(){ deleteEvent(pill.dataset.id); });
+        acts.appendChild(eb); acts.appendChild(db);
+        pill.appendChild(txt); pill.appendChild(acts); cell.appendChild(pill);
       }
     });
     c.appendChild(cell);
   }
 }
 
-async function addEvent(){
-  var sd=document.getElementById("startDate").value;
-  var ed=document.getElementById("endDate").value||sd;
-  var ev=document.getElementById("eventName").value.trim();
-  var em=document.getElementById("emoji").value.trim();
+async function addEvent() {
+  var sd=document.getElementById("startDate").value, ed=document.getElementById("endDate").value||sd;
+  var ev=document.getElementById("eventName").value.trim(), em=document.getElementById("emoji").value.trim();
   var col=getColor("colorPicker");
-  if(!sd||!ev){alert("Please enter a date and event name.");return;}
-  var res=await fetch(SUPABASE_URL+"/rest/v1/events",{method:"POST",headers:sbHeaders,body:JSON.stringify({startDate:sd,endDate:ed,event:ev,emoji:em,color:col})});
-  if(res.ok){
-    document.getElementById("startDate").value="";document.getElementById("endDate").value="";
-    document.getElementById("eventName").value="";document.getElementById("emoji").value="";
-    setColor("colorPicker","blue");loadCalendar();
-  } else {alert("Failed to add event.");}
+  if (!sd||!ev) { alert("Please enter a date and event name."); return; }
+  var res = await fetch(SUPA+"/rest/v1/events", {method:"POST",headers:HDR,body:JSON.stringify({startDate:sd,endDate:ed,event:ev,emoji:em,color:col})});
+  if (res.ok) {
+    document.getElementById("startDate").value=""; document.getElementById("endDate").value="";
+    document.getElementById("eventName").value=""; document.getElementById("emoji").value="";
+    setColor("colorPicker","blue"); loadCalendar();
+  } else { alert("Failed to add event."); }
 }
 
-async function openEdit(id){
-  var res=await fetch(SUPABASE_URL+"/rest/v1/events?id=eq."+id+"&select=*",{headers:sbHeaders});
-  var data=await res.json();var ev=data[0];if(!ev)return;
-  document.getElementById("editId").value=ev.id;
-  document.getElementById("editStartDate").value=ev.startDate||"";
-  document.getElementById("editEndDate").value=ev.endDate||"";
-  document.getElementById("editEventName").value=ev.event||"";
-  document.getElementById("editEmoji").value=ev.emoji||"";
+async function openEdit(id) {
+  var res = await fetch(SUPA+"/rest/v1/events?id=eq."+id+"&select=*", {headers:HDR});
+  var data = await res.json(); var ev = data[0]; if (!ev) return;
+  document.getElementById("editId").value       = ev.id;
+  document.getElementById("editStartDate").value = ev.startDate||"";
+  document.getElementById("editEndDate").value   = ev.endDate||"";
+  document.getElementById("editEventName").value = ev.event||"";
+  document.getElementById("editEmoji").value     = ev.emoji||"";
   setColor("editColorPicker",(ev.color||"blue").toLowerCase());
   document.getElementById("editModal").classList.add("open");
 }
-function closeModal(){document.getElementById("editModal").classList.remove("open");}
+function closeModal(){ document.getElementById("editModal").classList.remove("open"); }
 
-async function saveEdit(){
+async function saveEdit() {
   var id=document.getElementById("editId").value;
-  var sd=document.getElementById("editStartDate").value;
-  var ed=document.getElementById("editEndDate").value||sd;
-  var ev=document.getElementById("editEventName").value.trim();
-  var em=document.getElementById("editEmoji").value.trim();
+  var sd=document.getElementById("editStartDate").value, ed=document.getElementById("editEndDate").value||sd;
+  var ev=document.getElementById("editEventName").value.trim(), em=document.getElementById("editEmoji").value.trim();
   var col=getColor("editColorPicker");
-  if(!sd||!ev){alert("Please fill in date and event name.");return;}
-  var res=await fetch(SUPABASE_URL+"/rest/v1/events?id=eq."+id,{method:"PATCH",headers:sbHeaders,body:JSON.stringify({startDate:sd,endDate:ed,event:ev,emoji:em,color:col})});
-  if(res.ok){closeModal();loadCalendar();}else{alert("Failed to save changes.");}
+  if (!sd||!ev) { alert("Please fill in date and event name."); return; }
+  var res = await fetch(SUPA+"/rest/v1/events?id=eq."+id, {method:"PATCH",headers:HDR,body:JSON.stringify({startDate:sd,endDate:ed,event:ev,emoji:em,color:col})});
+  if (res.ok) { closeModal(); loadCalendar(); } else { alert("Failed to save changes."); }
 }
 
-async function deleteEvent(id){
-  if(!confirm("Delete this event?"))return;
-  var res=await fetch(SUPABASE_URL+"/rest/v1/events?id=eq."+id,{method:"DELETE",headers:sbHeaders});
-  if(res.ok)loadCalendar();else alert("Failed to delete event.");
+async function deleteEvent(id) {
+  if (!confirm("Delete this event?")) return;
+  var res = await fetch(SUPA+"/rest/v1/events?id=eq."+id, {method:"DELETE",headers:HDR});
+  if (res.ok) loadCalendar(); else alert("Failed to delete event.");
 }
 
-document.getElementById("editModal").addEventListener("click",function(e){
-  if(e.target===document.getElementById("editModal"))closeModal();
+document.getElementById("editModal").addEventListener("click", function(e){
+  if (e.target===document.getElementById("editModal")) closeModal();
 });
 
 loadCalendar();

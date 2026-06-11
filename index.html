@@ -78,6 +78,7 @@ button:hover { background: #e04e52; }
     <div class="legend-item"><div class="legend-dot" style="background:#fff1b8"></div> Ben</div>
     <div class="legend-item"><div class="legend-dot" style="background:#d0bdf4"></div> Hannah</div>
     <div class="legend-item"><div class="legend-dot" style="background:#d9d9d9"></div> Holiday/Birthday</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#ffd6a5"></div> Mommy Yes Day</div>
   </div>
   <div class="form-box no-print">
     <h3>Add Event</h3>
@@ -95,6 +96,7 @@ button:hover { background: #e04e52; }
       <div class="color-opt" data-color="yellow" style="background:#fff1b8" title="Ben"></div>
       <div class="color-opt" data-color="purple" style="background:#d0bdf4" title="Hannah"></div>
       <div class="color-opt" data-color="grey" style="background:#d9d9d9" title="Holiday/Birthday"></div>
+      <div class="color-opt" data-color="orange" style="background:#ffd6a5" title="Mommy Yes Day"></div>
     </div>
     <button onclick="addEvent()" style="margin-top:14px;">Add Event</button>
   </div>
@@ -121,6 +123,7 @@ button:hover { background: #e04e52; }
       <div class="color-opt" data-color="yellow" style="background:#fff1b8" title="Ben"></div>
       <div class="color-opt" data-color="purple" style="background:#d0bdf4" title="Hannah"></div>
       <div class="color-opt" data-color="grey" style="background:#d9d9d9" title="Holiday/Birthday"></div>
+      <div class="color-opt" data-color="orange" style="background:#ffd6a5" title="Mommy Yes Day"></div>
     </div>
     <div class="modal-actions">
       <button onclick="saveEdit()">Save</button>
@@ -132,7 +135,7 @@ button:hover { background: #e04e52; }
 var SUPA = "https://ahdcdasfqhqsimxmfpkj.supabase.co";
 var KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoZGNkYXNmcWhxc2lteG1mcGtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMDUyNjIsImV4cCI6MjA5NTg4MTI2Mn0.dvA3I_Nb1JxGXFYGDWQAzwXTmsfqNvBVVxjG_UOqFsg";
 var HDR = {"apikey":KEY,"Authorization":"Bearer "+KEY,"Content-Type":"application/json","Prefer":"return=representation"};
-var COLORS = {blue:"#bde0fe",green:"#caffbf",red:"#ffadad",yellow:"#fff1b8",purple:"#d0bdf4",grey:"#d9d9d9"};
+var COLORS = {blue:"#bde0fe",green:"#caffbf",red:"#ffadad",yellow:"#fff1b8",purple:"#d0bdf4",grey:"#d9d9d9",orange:"#ffd6a5"};
 var DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
 function pickColor(pid) {
